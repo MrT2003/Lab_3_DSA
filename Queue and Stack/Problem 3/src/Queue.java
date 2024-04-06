@@ -71,4 +71,11 @@ public class Queue {
         System.out.println("Front index: " + front);
         System.out.println("Rear index: " + rear);
     }
+    public void displayFrontRear() {
+        int rearIndex = rear == -1 ? maxSize - 1 : rear;
+        
+        System.out.println("\nFront index: " + front + "; Value at queArray[front]: " + queArray[front]);
+        System.out.println("\nRear index: " + rearIndex + "; Value at queArray[rear index]: " + queArray[rearIndex]);
+    }
+    
 }

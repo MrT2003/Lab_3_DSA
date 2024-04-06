@@ -4,7 +4,7 @@ class QueueApp {
 
         theQueue.insert(10); // insert 4 items
         theQueue.insert(20);
-        theQueue.insert(30);
+        theQueue.insert(30); 
         theQueue.insert(40);
 
         theQueue.remove(); // remove 3 items
