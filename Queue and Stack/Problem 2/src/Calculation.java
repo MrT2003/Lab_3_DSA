@@ -26,7 +26,7 @@ public class Calculation {
                 while (operatorStack.peek() != '(') {
                     processOperation(operandStack, operatorStack);
                 }
-                operatorStack.pop(); // Pop '('
+                operatorStack.pop();
             } else if (isOperator(token)) {                         /*if it is operator */
                 while (!operatorStack.isEmpty() && precedence(operatorStack.peek()) >= precedence(token)) {
                     processOperation(operandStack, operatorStack);
@@ -60,14 +60,13 @@ public class Calculation {
     }
 
     private static void processOperation(Stack<Integer> operandStack, Stack<Character> operatorStack) {
-        char operator = operatorStack.pop(); //Remove the operator
-        int operand2 = operandStack.pop(); // Remove first operand
-        int operand1 = operandStack.pop(); // Remove second operand
-        int result = performOperation(operand1, operand2, operator); // Performing calculation after prompting user inputting valid operator
-        operandStack.push(result); // Get result and add it the stack again
+        char operator = operatorStack.pop();
+        int operand2 = operandStack.pop(); 
+        int operand1 = operandStack.pop();
+        int result = performOperation(operand1, operand2, operator); 
+        operandStack.push(result); 
     }
 
-    // Prompt user to input valid operator
     private static int performOperation(int operand1, int operand2, char operator) {
         switch (operator) {
             case '+':
